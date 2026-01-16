@@ -1,6 +1,6 @@
-# 💼 Portfolio - Max André Severin
+# 💼 Portfolio - Maxandre Severin
 
-Portfolio personnel d'un développeur web full-stack fraîchement diplômé de l'école 42 Paris.
+Portfolio personnel développeur web full-stack de l'école 42 Paris.
 
 ## 🎨 Design
 
@@ -28,7 +28,7 @@ Portfolio au style **néo-brutaliste** avec animations 3D, effets parallax et cu
 
 ```bash
 # Cloner le repository
-git clone https://github.com/VOTRE_USERNAME/portfolio.git
+git clone https://github.com/Nextroozz/Portfolio3D.git
 
 # Ouvrir le dossier
 cd portfolio
@@ -41,22 +41,15 @@ python3 -m http.server 8000
 
 ## 📝 Configuration EmailJS
 
-1. Créez un compte sur [EmailJS](https://www.emailjs.com/)
-2. Configurez votre service email
-3. Créez un template
-4. Remplacez les clés dans `script.js` (ligne ~895)
-
-Voir [CONFIGURATION_EMAIL.md](CONFIGURATION_EMAIL.md) pour le guide complet.
+EmailJS
 
 ## 🌐 Hébergement
 
 Ce site est hébergé sur **Netlify** (ou Vercel/GitHub Pages).
 
-Voir [GUIDE_HEBERGEMENT.md](GUIDE_HEBERGEMENT.md) pour déployer votre propre version.
-
 ## 📄 Licence
 
-© 2026 Max André Severin. Tous droits réservés.
+© 2026 Maxandre Severin. Tous droits réservés.
 
 ---
 
