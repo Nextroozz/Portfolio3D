@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Développeur Web Junior | 42 Paris</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Curseur personnalisé pixelisé -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Loader brutal -->
+    <div class="loader">
+        <div class="loader-text">
+            <span data-text="LOADING">LOADING</span>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <span class="loader-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- Navigation néo-brutaliste -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="rainbow-text">«MAX»</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link" data-text="HOME">HOME</a>
+            <a href="#about" class="nav-link" data-text="ABOUT">ABOUT</a>
+            <a href="#projects" class="nav-link" data-text="WORK">WORK</a>
+            <a href="#skills" class="nav-link" data-text="SKILLS">SKILLS</a>
+            <a href="#contact" class="nav-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="nav-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Menu mobile -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-link">HOME HOME HOME</a>
+            <a href="#about" class="mobile-link">ABOUT ABOUT ABOUT</a>
+            <a href="#projects" class="mobile-link">WORK WORK WORK</a>
+            <a href="#skills" class="mobile-link">SKILLS SKILLS SKILLS</a>
+            <a href="#contact" class="mobile-link">CONTACT CONTACT CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero Section avec effet parallax 3D -->
+    <section id="home" class="hero">
+        <div class="hero-bg-text">
+            <span>DEVELOPER</span>
+            <span>DEVELOPER</span>
+            <span>DEVELOPER</span>
+        </div>
+        
+        <div class="hero-3d-scene">
+            <div class="floating-cube cube-1"></div>
+            <div class="floating-cube cube-2"></div>
+            <div class="floating-cube cube-3"></div>
+            <div class="floating-sphere"></div>
+            <div class="floating-torus"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">«»»»»» FRESH FROM 42 PARIS «»»»»»</div>
+            <h1 class="hero-title">
+                <span class="title-line">
+                    <span class="word" data-char="J">J</span>
+                    <span class="word" data-char="U">U</span>
+                    <span class="word" data-char="N">N</span>
+                    <span class="word" data-char="I">I</span>
+                    <span class="word" data-char="O">O</span>
+                    <span class="word" data-char="R">R</span>
+                </span>
+                <span class="title-line">
+                    <span class="word" data-char="D">D</span>
+                    <span class="word" data-char="E">E</span>
+                    <span class="word" data-char="V">V</span>
+                    <span class="word special" data-char="«">«</span>
+                </span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typed-text"></span>
+                <span class="cursor-blink">|</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-brutal">
+                    <span class="btn-text">VOIR MES PROJETS</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#contact" class="btn-brutal btn-outline">
+                    <span class="btn-text">ME CONTACTER</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>SCROLL DOWN</span>
+        </div>
+
+        <!-- ASCII Art décoratif -->
+        <div class="ascii-decoration left">
+╔══════════════╗
+║  42 PARIS    ║
+║  ████████    ║
+║  ██    ██    ║
+║  ████████    ║
+║  ██    ██    ║
+║  ██    ██    ║
+╚══════════════╝
+        </div>
+        <div class="ascii-decoration right">
+┌──────────────┐
+│ STATUS: READY│
+│ ░░░░░░░░░░░░ │
+│ HIRE ME! ►►► │
+└──────────────┘
+        </div>
+    </section>
+
+    <!-- Section About avec parallax SVG -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <span class="section-tag">«« ABOUT »»</span>
+            <h2 class="section-title rainbow-text">QUI SUIS-JE?</h2>
+        </div>
+
+        <div class="about-container">
+            <div class="about-image">
+                <div class="image-frame">
+                    <div class="image-glitch"></div>
+                    <div class="image-scanlines"></div>
+                    <div class="profile-placeholder">
+                        <img src="images/avatar.png" alt="Photo de profil" class="avatar-img">
+                    </div>
+                </div>
+                <div class="image-decoration">
+                    <span>[ PHOTO.JPG ]</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="reveal-text">
+                        <span class="highlight">Fraîchement diplômé de l'école 42 Paris</span>, 
+                        je suis un développeur web passionné par la création d'expériences 
+                        numériques uniques et mémorables.
+                    </p>
+                    <p class="reveal-text">
+                        Mon parcours atypique chez 42 m'a appris à <span class="highlight">résoudre 
+                        des problèmes complexes</span>, à travailler en équipe et à ne jamais 
+                        abandonner face aux défis.
+                    </p>
+                    <p class="reveal-text">
+                        Je combine créativité et rigueur technique pour construire des 
+                        interfaces <span class="highlight">innovantes et performantes</span>.
+                    </p>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="42">0</span>
+                        <span class="stat-label">PROJETS COMPLÉTÉS</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1337">0</span>
+                        <span class="stat-label">HEURES DE CODE</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% MOTIVATION</span>
+                    </div>
+                </div>
+
+                <div class="about-badges">
+                    <div class="badge">
+                        <span class="badge-icon">🎓</span>
+                        <span class="badge-text">42 PARIS</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">💻</span>
+                        <span class="badge-text">FULL-STACK</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon">🚀</span>
+                        <span class="badge-text">PASSIONNÉ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marquee text décoratif -->
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>CREATIVE DEVELOPER</span>
+                <span>•</span>
+                <span>42 PARIS</span>
+                <span>•</span>
+                <span>JUNIOR DEV</span>
+                <span>•</span>
+                <span>WEB ENTHUSIAST</span>
+                <span>•</span>
+                <span>CREATIVE DEVELOPER</span>
+                <span>•</span>
+                <span>42 PARIS</span>
+                <span>•</span>
+                <span>JUNIOR DEV</span>
+                <span>•</span>
+                <span>WEB ENTHUSIAST</span>
+                <span>•</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Projets avec effet carte 3D -->
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <span class="section-tag">«« WORK »»</span>
+            <h2 class="section-title rainbow-text">MES PROJETS</h2>
+        </div>
+
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">TOUS</button>
+            <button class="filter-btn" data-filter="web">WEB</button>
+            <button class="filter-btn" data-filter="42">42 PROJECTS</button>
+            <button class="filter-btn" data-filter="creative">CRÉATIF</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Cube3D -->
+            <article class="project-card" data-category="42">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <div class="project-placeholder gradient-4">
+                                <div class="placeholder-grid">
+                                    <span>CUB3D</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay">
+                                <span class="view-project">[ VOIR + ]</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="project-number">01</span>
+                            <h3 class="project-title">CUB3D</h3>
+                            <div class="project-tags">
+                                <span>C</span>
+                                <span>RAYCASTING</span>
+                                <span>MINILIBX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>CUB3D</h3>
+                        <p>Moteur de raycasting inspiré de Wolfenstein 3D avec rendu temps réel et gestion des textures.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Nextroozz/42Cube3D" target="_blank" class="project-link">GITHUB →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SAAS (SalesSmart) -->
+            <article class="project-card" data-category="web saas">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <div class="project-placeholder gradient-6">
+                                <div class="placeholder-grid">
+                                    <span>SAAS</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay">
+                                <span class="view-project">[ VOIR + ]</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="project-number">02</span>
+                            <h3 class="project-title">SAAS</h3>
+                            <div class="project-tags">
+                                <span>SAAS</span>
+                                <span>B2B</span>
+                                <span>PROSPECTION</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>SAAS</h3>
+                        <p>Solution SaaS de prospection téléphonique B2B (plateforme SalesSmart) pour aider les équipes commerciales à générer des leads et automatiser la prospection.</p>
+                        <div class="card-links">
+                            <a href="https://salessmart.fr/" target="_blank" class="project-link">LIVE →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Portfolio 3D -->
+            <article class="project-card" data-category="creative web">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <div class="project-placeholder gradient-3">
+                                <div class="placeholder-grid">
+                                    <span>PORTFOLIO 3D</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay">
+                                <span class="view-project">[ VOIR + ]</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="project-number">03</span>
+                            <h3 class="project-title">PORTFOLIO 3D</h3>
+                            <div class="project-tags">
+                                <span>THREE.JS</span>
+                                <span>GSAP</span>
+                                <span>WEBGL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>PORTFOLIO 3D</h3>
+                        <p>Portfolio interactif avec scènes 3D immersives, animations fluides et design néo-brutaliste.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Nextroozz/Portfolio3D" target="_blank" class="project-link">GITHUB →</a>
+                            <a href="#home" class="project-link">LIVE →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Minishell -->
+            <article class="project-card" data-category="42">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-image">
+                            <div class="project-placeholder gradient-2">
+                                <div class="placeholder-grid">
+                                    <span>MINISHELL</span>
+                                </div>
+                            </div>
+                            <div class="card-overlay">
+                                <span class="view-project">[ VOIR + ]</span>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <span class="project-number">04</span>
+                            <h3 class="project-title">MINISHELL</h3>
+                            <div class="project-tags">
+                                <span>C</span>
+                                <span>UNIX</span>
+                                <span>SHELL</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>MINISHELL</h3>
+                        <p>Recréation d'un shell bash avec gestion des pipes, redirections, variables d'environnement et signaux.</p>
+                        <div class="card-links">
+                            <a href="https://github.com/Nextroozz/Minishell" target="_blank" class="project-link">GITHUB →</a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="projects-cta">
+            <a href="https://github.com/Nextroozz" target="_blank" class="btn-brutal">
+                <span class="btn-text">VOIR PLUS SUR GITHUB</span>
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Skills avec visualisation interactive -->
+    <section id="skills" class="skills">
+        <div class="section-header">
+            <span class="section-tag">«« SKILLS »»</span>
+            <h2 class="section-title rainbow-text">MES COMPÉTENCES</h2>
+        </div>
+
+        <div class="skills-container">
+            <!-- 3D Cat Model -->
+            <div class="cat-3d-container" id="cat3DContainer">
+                <canvas id="catCanvas"></canvas>
+            </div>
+
+            <div class="skills-list">
+                <!-- Carousel wrapper -->
+                <div class="skills-carousel">
+                    <button class="carousel-arrow carousel-prev" aria-label="Précédent">
+                        <span>←</span>
+                    </button>
+                    
+                    <div class="carousel-container">
+                        <div class="skill-category active" data-index="0">
+                            <h3 class="category-title">
+                                <span class="bracket">[</span> FRONTEND <span class="bracket">]</span>
+                            </h3>
+                            <div class="skills-bars">
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">HTML / CSS / SASS</span>
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">JavaScript / TypeScript</span>
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">React / Next.js</span>
+                                        <span class="skill-percent">85%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Three.js / GSAP</span>
+                                        <span class="skill-percent">75%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category" data-index="1">
+                            <h3 class="category-title">
+                                <span class="bracket">[</span> BACKEND <span class="bracket">]</span>
+                            </h3>
+                            <div class="skills-bars">
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Node.js / Express</span>
+                                        <span class="skill-percent">85%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Python / Django</span>
+                                        <span class="skill-percent">80%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">C / C++</span>
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">PostgreSQL / MongoDB</span>
+                                        <span class="skill-percent">80%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category" data-index="2">
+                            <h3 class="category-title">
+                                <span class="bracket">[</span> TOOLS & DEVOPS <span class="bracket">]</span>
+                            </h3>
+                            <div class="skills-bars">
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Git / GitHub</span>
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Docker / Docker Compose</span>
+                                        <span class="skill-percent">85%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-info">
+                                        <span class="skill-name">Linux / Shell</span>
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                    <div class="bar-container">
+                                        <div class="bar-fill" data-width="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-arrow carousel-next" aria-label="Suivant">
+                        <span>→</span>
+                    </button>
+                </div>
+                
+                <!-- Carousel dots indicator -->
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" data-index="0"></span>
+                    <span class="carousel-dot" data-index="1"></span>
+                    <span class="carousel-dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal style animation -->
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <span class="terminal-title">skills.sh</span>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="prompt">$</span>
+                    <span class="command typing">cat skills.json | jq '.frontend'</span>
+                </div>
+                <div class="terminal-output">
+                    <pre>{
+  "languages": ["JavaScript", "TypeScript", "HTML", "CSS"],
+  "frameworks": ["React", "Next.js", "Vue.js"],
+  "tools": ["GSAP", "Three.js", "Tailwind"]
+}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 42 Experience -->
+    <section id="experience" class="experience">
+        <div class="experience-wrapper">
+            <div class="section-header">
+                <span class="section-tag">«« 42 PARIS »»</span>
+                <h2 class="section-title rainbow-text">MON PARCOURS</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                    <span class="timeline-date">2024</span>
+                    <h3 class="timeline-title">DIPLÔME 42 PARIS (en cours)</h3>
+                    <p>Validation du cursus complet avec mention. Spécialisation en développement web et systèmes.</p>
+                    <div class="timeline-tags">
+                        <span>1337</span>
+                        <span>BLACKHOLE: ∞</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023</span>
+                    <h3 class="timeline-title">PROJETS PERSONNELS</h3>
+                    <p>freelance, webserv, side projects - Projets fullstack et DevOps complexes.</p>
+                    <div class="timeline-tags">
+                        <span>FULLSTACK</span>
+                        <span>DEVOPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2022</span>
+                    <h3 class="timeline-title">CORE CURRICULUM</h3>
+                    <p>Minishell, philosophers, cub3D - Maîtrise du C et des concepts système Unix.</p>
+                    <div class="timeline-tags">
+                        <span>C/C++</span>
+                        <span>UNIX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2021</span>
+                    <h3 class="timeline-title">PISCINE & DÉBUT</h3>
+                    <p>Réussite de la piscine et début du cursus. Découverte de la pédagogie peer-to-peer.</p>
+                    <div class="timeline-tags">
+                        <span>PISCINE</span>
+                        <span>CADET</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="contact-bg">
+            <span>CONTACT</span>
+            <span>CONTACT</span>
+            <span>CONTACT</span>
+        </div>
+
+        <div class="section-header">
+            <span class="section-tag">«« CONTACT »»</span>
+            <h2 class="section-title rainbow-text">TRAVAILLONS ENSEMBLE</h2>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <p class="contact-text">
+                    Disponible pour des opportunités de développeur junior, 
+                    des projets freelance ou simplement pour discuter tech !
+                </p>
+
+                <div class="contact-links">
+                    <a href="mailto:mseverin@student.42.fr" class="contact-link">
+                        <span class="link-icon">@</span>
+                        <span class="link-text">mseverin@student.42.fr</span>
+                    </a>
+                    <a href="https://github.com/Nextroozz" target="_blank" class="contact-link">
+                        <span class="link-icon">GH</span>
+                        <span class="link-text">github.com/Nextroozz</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/maxandre-severin-6700252b9/" target="_blank" class="contact-link">
+                        <span class="link-icon">in</span>
+                        <span class="link-text">linkedin.com/in/maxandre-severin-6700252b9/</span>
+                    </a>
+                </div>
+
+                <div class="contact-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">DISPONIBLE POUR NOUVELLES OPPORTUNITÉS</span>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">[ NOM ]</label>
+                    <input type="text" id="name" name="name" required placeholder="Votre nom...">
+                    <span class="input-decoration">»»»</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">[ EMAIL ]</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    <span class="input-decoration">»»»</span>
+                </div>
+                <div class="form-group">
+                    <label for="message">[ MESSAGE ]</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                    <span class="input-decoration">»»»</span>
+                </div>
+                <button type="submit" class="btn-brutal btn-submit">
+                    <span class="btn-text">ENVOYER LE MESSAGE</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="rainbow-text">«MAX»</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#home">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#projects">WORK</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#contact">CONTACT</a>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://github.com/Nextroozz" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/maxandre-severin-6700252b9/" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 | DÉVELOPPÉ AVEC <span class="heart">❤</span> ET BEAUCOUP DE <span class="coffee">☕</span></p>
+            <p class="footer-ascii">
+                «»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»»«
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- EmailJS pour l'envoi de mails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
