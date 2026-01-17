@@ -244,7 +244,13 @@
             <button class="filter-btn" data-filter="creative">CRÉATIF</button>
         </div>
 
-        <div class="projects-grid">
+        <!-- Carousel wrapper pour mobile -->
+        <div class="projects-carousel-wrapper">
+            <button class="projects-arrow projects-prev" aria-label="Projet précédent">
+                <span>‹</span>
+            </button>
+            
+            <div class="projects-grid">
             <!-- Cube3D -->
             <article class="project-card" data-category="42">
                 <div class="card-inner">
@@ -381,6 +387,14 @@
                     </div>
                 </div>
             </article>
+        </div>
+
+            <button class="projects-arrow projects-next" aria-label="Projet suivant">
+                <span>›</span>
+            </button>
+            
+            <!-- Indicateurs de pagination -->
+            <div class="projects-dots"></div>
         </div>
 
         <div class="projects-cta">

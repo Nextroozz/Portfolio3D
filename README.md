@@ -45,7 +45,8 @@ EmailJS
 
 ## 🌐 Hébergement
 
-Ce site est hébergé sur **Netlify** (ou Vercel/GitHub Pages).
+Ce site est hébergé sur **Netlify**
+https://my-portfolio42.netlify.app/
 
 ## 📄 Licence
 

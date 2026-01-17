@@ -1038,6 +1038,18 @@ section {
     box-shadow: 0 0 15px rgba(255, 140, 66, 0.3);
 }
 
+/* Carousel wrapper - hidden on desktop */
+.projects-carousel-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Flèches et dots cachés sur desktop */
+.projects-arrow,
+.projects-dots {
+    display: none;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(350px, 500px));
@@ -1985,12 +1997,183 @@ section {
         display: none;
     }
     
+    /* === PROJECTS RESPONSIVE MOBILE === */
+    .projects {
+        padding: var(--spacing-lg) var(--spacing-xs);
+        overflow: hidden;
+    }
+    
+    /* Carousel wrapper */
+    .projects-carousel-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    
     .projects-grid {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     
     .project-card {
-        height: 400px;
+        flex: 0 0 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+        display: block !important;
+        opacity: 1 !important;
+    }
+    
+    .project-card .card-inner {
+        width: 100%;
+    }
+    
+    /* Flèches de navigation */
+    .projects-arrow {
+        display: flex !important;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid var(--sunset-pink);
+        color: var(--sunset-pink);
+        font-size: 1.2rem;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        transition: all var(--transition-fast);
+        cursor: pointer !important;
+        box-shadow: 0 2px 10px rgba(255, 105, 180, 0.3);
+    }
+    
+    .projects-arrow:hover,
+    .projects-arrow:active {
+        background: var(--sunset-pink);
+        color: white;
+    }
+    
+    .projects-prev {
+        left: 5px;
+    }
+    
+    .projects-next {
+        right: 5px;
+    }
+    
+    /* Indicateurs (dots) */
+    .projects-dots {
+        display: flex !important;
+        justify-content: center;
+        gap: 10px;
+        margin-top: var(--spacing-sm);
+        padding: 10px 0;
+    }
+    
+    .project-dot {
+        width: 10px;
+        height: 10px;
+        background: #E0E0E0;
+        border: 2px solid var(--sunset-pink);
+        cursor: pointer !important;
+        transition: all var(--transition-fast);
+    }
+    
+    .project-dot.active {
+        background: var(--sunset-pink);
+        transform: scale(1.2);
+    }
+    
+    .card-inner {
+        transform: none !important;
+    }
+    
+    /* Désactiver le flip sur mobile - afficher les deux faces empilées */
+    .project-card:hover .card-inner {
+        transform: none;
+    }
+    
+    .card-front,
+    .card-back {
+        position: relative;
+        backface-visibility: visible;
+        transform: none;
+    }
+    
+    .card-front {
+        border-bottom: none;
+    }
+    
+    .card-back {
+        border-top: 1px dashed var(--sunset-pink);
+        padding: var(--spacing-sm);
+    }
+    
+    .card-back h3 {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .card-back p {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+    
+    .card-info {
+        padding: var(--spacing-sm);
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    .project-number {
+        font-size: 0.75rem;
+    }
+    
+    .project-tags {
+        gap: 4px;
+    }
+    
+    .project-tags span {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    
+    .card-links {
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    .project-link {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        flex: 1;
+        text-align: center;
+        min-width: 80px;
+    }
+    
+    .projects-filter {
+        display: none !important;
+    }
+    
+    .projects-cta {
+        margin-top: var(--spacing-md);
     }
     
     .about-stats {
@@ -2006,11 +2189,16 @@ section {
     /* Désactiver le curseur personnalisé sur mobile */
     .cursor-dot,
     .cursor-outline {
-        display: none;
+        display: none !important;
     }
     
-    html, body {
-        cursor: auto;
+    html, body, *, *::before, *::after,
+    a, button, input, textarea, select,
+    [role="button"], [onclick],
+    .btn-brutal, .nav-link, .filter-btn,
+    .project-card, .skill-planet, .social-link,
+    .mobile-link, .nav-menu-btn, .projects-arrow {
+        cursor: auto !important;
     }
 }
 
@@ -2024,12 +2212,66 @@ section {
         justify-content: center;
     }
     
+    /* === PROJECTS TRÈS PETITS ÉCRANS === */
+    .projects {
+        padding: var(--spacing-md) var(--spacing-xs);
+    }
+    
     .projects-filter {
         flex-direction: column;
+        align-items: stretch;
     }
     
     .filter-btn {
         width: 100%;
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .project-card {
+        min-height: 320px;
+    }
+    
+    .card-image {
+        height: 150px;
+    }
+    
+    .card-info {
+        padding: var(--spacing-xs);
+    }
+    
+    .card-back {
+        padding: var(--spacing-xs);
+    }
+    
+    .card-back h3 {
+        font-size: 1rem;
+    }
+    
+    .card-back p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .card-links {
+        flex-direction: column;
+    }
+    
+    .project-link {
+        width: 100%;
+    }
+    
+    .project-title {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+    }
+    
+    .section-tag {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
     }
 }
 

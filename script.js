@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initScrollAnimations();
     initProjectFilters();
+    initProjectsCarousel();
     initSkillBars();
     initSkillsCarousel();
     initCounters();
@@ -327,21 +328,23 @@ function initScrollAnimations() {
         text.classList.add('visible');
     });
     
-    // Animation des cartes projet avec stagger
+    // Animation des cartes projet avec stagger (seulement sur desktop)
     const projectCards = document.querySelectorAll('.project-card');
-    gsap.from(projectCards, {
-        scrollTrigger: {
-            trigger: '.projects-grid',
-            start: "top 75%",
-            toggleActions: "play none none reverse"
-        },
-        y: 100,
-        opacity: 0,
-        rotation: 3,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "back.out(1.2)"
-    });
+    if (window.innerWidth > 768) {
+        gsap.from(projectCards, {
+            scrollTrigger: {
+                trigger: '.projects-grid',
+                start: "top 75%",
+                toggleActions: "play none none reverse"
+            },
+            y: 100,
+            opacity: 0,
+            rotation: 3,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "back.out(1.2)"
+        });
+    }
     
     // Animation de la timeline - chaque item prend tout l'écran
     const timelineItems = document.querySelectorAll('.timeline-item');
@@ -480,6 +483,19 @@ function initProjectFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
+    // Sur mobile, désactiver les filtres pour le carrousel
+    if (window.innerWidth <= 768) {
+        filterBtns.forEach(btn => {
+            btn.style.display = 'none';
+        });
+        // S'assurer que tous les projets sont visibles
+        projectCards.forEach(card => {
+            card.style.display = 'block';
+            card.style.opacity = '1';
+        });
+        return;
+    }
+    
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Update active state
@@ -512,6 +528,161 @@ function initProjectFilters() {
         });
     });
 }
+
+// ===== PROJECTS CAROUSEL (MOBILE) =====
+let projectsCarouselCurrentIndex = 0;
+
+function initProjectsCarousel() {
+    const isMobile = window.innerWidth <= 768;
+    const grid = document.querySelector('.projects-grid');
+    
+    if (!isMobile) {
+        // Reset sur desktop
+        if (grid) {
+            grid.style.transform = '';
+            grid.style.display = '';
+        }
+        return;
+    }
+    
+    const cards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.projects-prev');
+    const nextBtn = document.querySelector('.projects-next');
+    const dotsContainer = document.querySelector('.projects-dots');
+    
+    if (!grid || !cards.length || !prevBtn || !nextBtn || !dotsContainer) {
+        console.log('Carousel elements not found');
+        return;
+    }
+    
+    // Réinitialiser toutes les cartes comme visibles pour le carousel
+    cards.forEach(card => {
+        card.style.display = 'block';
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+    });
+    
+    const totalSlides = cards.length;
+    
+    if (totalSlides === 0) return;
+    
+    // S'assurer de commencer au premier slide
+    projectsCarouselCurrentIndex = 0;
+    
+    // Créer les dots
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('project-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.setAttribute('aria-label', `Projet ${i + 1}`);
+        dot.dataset.index = i;
+        dotsContainer.appendChild(dot);
+    }
+    
+    const dots = dotsContainer.querySelectorAll('.project-dot');
+    
+    // Ajouter les event listeners aux dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    function updateCarousel() {
+        // Déplacer la grille
+        const offset = -projectsCarouselCurrentIndex * 100;
+        grid.style.transform = `translateX(${offset}%)`;
+        
+        // Mettre à jour les dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === projectsCarouselCurrentIndex);
+        });
+        
+        // Mettre à jour l'état des boutons
+        prevBtn.style.opacity = projectsCarouselCurrentIndex === 0 ? '0.3' : '1';
+        nextBtn.style.opacity = projectsCarouselCurrentIndex === totalSlides - 1 ? '0.3' : '1';
+    }
+    
+    function goToSlide(index) {
+        projectsCarouselCurrentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+        updateCarousel();
+    }
+    
+    function nextSlide() {
+        if (projectsCarouselCurrentIndex < totalSlides - 1) {
+            projectsCarouselCurrentIndex++;
+            updateCarousel();
+        }
+    }
+    
+    function prevSlide() {
+        if (projectsCarouselCurrentIndex > 0) {
+            projectsCarouselCurrentIndex--;
+            updateCarousel();
+        }
+    }
+    
+    // Supprimer les anciens event listeners en clonant les boutons
+    const newPrevBtn = prevBtn.cloneNode(true);
+    const newNextBtn = nextBtn.cloneNode(true);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+    
+    // Ajouter les nouveaux event listeners
+    newPrevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        prevSlide();
+    });
+    
+    newNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        nextSlide();
+    });
+    
+    // Swipe support pour mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    grid.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    grid.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }, { passive: true });
+    
+    // Position initiale
+    grid.style.transform = 'translateX(0%)';
+    updateCarousel();
+}
+
+// Initialiser au resize avec debounce
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        projectsCarouselCurrentIndex = 0;
+        initProjectsCarousel();
+    }, 250);
+});
+
+// Appeler après le chargement complet
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        projectsCarouselCurrentIndex = 0;
+        initProjectsCarousel();
+    }, 500);
+});
 
 // ===== BARRES DE COMPÉTENCES =====
 function initSkillBars() {
